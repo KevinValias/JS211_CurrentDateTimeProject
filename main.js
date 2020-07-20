@@ -15,12 +15,30 @@ const displayDate = () => {
  
 
 // Write a JavaScript program to convert a number to a string.
-
-
-
+let firstNum = null;
+const saveNumber = (num) => {
+  firstNum = parseInt(num);
+};
+const numToString = () => {
+  let saveNumber = firstNum.toString();
+  return (document.getElementById("numInput").innerHTML =
+    saveNumber + " is a " + typeof saveNumber);
+};
 // Write a JavaScript program to convert a string to the number.
 
+const stringToNum = () => {
+  let string2 = parseInt(firstNum);
+  return (document.getElementById("stringInput").innerHTML =
+    string2 + " is a " + typeof string2);
+};
 
+// console.log("stringToNum:",stringToNum("54"))
+
+const convertType = () => {
+  let a = stringToNum();
+  let b = numToString();
+  return a && b;
+};
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
   // * Boolean
@@ -29,23 +47,52 @@ const displayDate = () => {
   // * Number
   // * NaN
   // * String
-  
+  const dataType = () => {
+    let x = typeOfData();
+    return (document.getElementById("typeInput").innerHTML =
+      x + " is a " + typeof x);
+  };
 
   
 // Write a JavaScript program that adds 2 numbers together.
+let secondNum = null;
+let thirdNum = null;
 
+const saveSecondNumber = (num) => {
+  secondNum = parseInt(num);
+};
 
 
 // Write a JavaScript program that runs only when 2 things are true.
-
-
+const twoTrue = () => {
+  if (secondNum && thirdNum) {
+    return (document.getElementById("dosTrueNum").innerHTML = true);
+    // return true;- for testing
+  } else {
+    return (document.getElementById("dosTrueNum").innerHTML = false);
+    // return false;- for testing
+  }
+};
 
 // Write a JavaScript program that runs when 1 of 2 things are true.
+const numAdd = () => {
+  const sum = secondNum + thirdNum;
+  return (document.getElementById("sumOfNum").innerHTML = sum);
+  // return sum;- for testing
+};
+  // return sum;- for testing
 
+
+// console.log("addedNums:", numAdd(3, 7));- should be sum
 
 
 // Write a JavaScript program that runs when both things are not true.  
-
+const notTrue = () => {
+  if (!secondNum && !thirdNum) {
+    return (document.getElementById("dosFalseNum").innerHTML = true);
+    // return true;- for testing
+  } else {
+    return (document.getElementById("dosFalseNum").innerHTML = false);
 // ***************************
 //         PART TWO
 // ***************************
